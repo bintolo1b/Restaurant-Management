@@ -17,6 +17,10 @@ public class VoucherBLL {
 		return instance;
 	}
 	
+	public Voucher getVoucherByID(int maVoucher) {
+		return VoucherDAL.getInstance().getVoucherByID(maVoucher);
+	}
+	
 	public int generateNewID() {
 		return VoucherDAL.getInstance().getLatestID()+1;
 	}

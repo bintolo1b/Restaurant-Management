@@ -109,5 +109,13 @@ public class VoucherDAL implements DALInterface<Voucher> {
 		return voucherArrayList;
 	}
 
+	public Voucher getVoucherByID(int maVoucher) {
+		String Condition = "select* from voucher where maVoucher=? ";
+    	ArrayList<Voucher> voucherArrayList = VoucherDAL.getInstance().selectByCondition(Condition, maVoucher);
+    	if (voucherArrayList.size()==0)
+    		return null;
+    	else return voucherArrayList.get(0);
+	}
+
 
 }

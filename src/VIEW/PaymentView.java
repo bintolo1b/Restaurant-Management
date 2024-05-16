@@ -272,7 +272,8 @@ public class PaymentView extends JDialog {
 				if (suDungVoucherArrayList.size()!=0) {
 					float tongPhanTramGiam=0;
 					for (int i = 0 ; i < suDungVoucherArrayList.size(); i++) {
-						Float sub = DieuKienVoucherBLL.getInstance().getPhanTramGiam(suDungVoucherArrayList.get(i).getMaVoucher());
+						Voucher voucher = VoucherBLL.getInStance().getVoucherByID(suDungVoucherArrayList.get(i).getMaVoucher());
+						Float sub = DieuKienVoucherBLL.getInstance().getPhanTramGiam(voucher.getMaDieuKien());
 						if (sub!=null)
 							tongPhanTramGiam +=sub;
 					}
